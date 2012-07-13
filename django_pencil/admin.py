@@ -11,19 +11,17 @@ from sorl.thumbnail import get_thumbnail
 
 from .models import Picture
 
-#TODO: ссылки должны быть на оригинал?? подумать о превьююшках
 
 class PictureAdmin(admin.ModelAdmin):
 
     list_display = ('display_thumb', 'display_filename', 'display_url', 'id',)
-    list_display_links = ('id', )
+    list_display_links = ()
     
     def display_thumb(self, obj):
         image = getattr(obj, 'file', None)
         if image:
             t = get_thumbnail(image,"50x50",crop='center', quality=99)
-            edit_url = '/admin/wysiwyg/wysiwygimage/%s/' % obj.pk
-            return u'<a href="%s"><img src="%s" /></a>' % (edit_url, t.url)
+            return u'<a href="%s"><img src="%s" /></a>' % (image.url, t.url)
         else:
             return u"Нет"
     display_thumb.short_description = u'Изображение'

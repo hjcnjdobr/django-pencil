@@ -6,17 +6,18 @@ from django.utils import simplejson as json
 from django.conf import settings
 
 
-JQUERY_URL = getattr(settings, 'JQUERY_URL', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
-JQUERY_FORM_URL = getattr(settings, 'JQUERY_FORM_URL', 'http://malsup.github.com/jquery.form.js')
+PENCIL_JQUERY_URL = getattr(settings, 'PENCIL_JQUERY_URL', settings.STATIC_URL + 'jquery.min.js')
+PENCIL_JQUERY_FORM_PLUGIN_URL = getattr(settings, 'PENCIL_JQUERY_FORM_URL',  settings.STATIC_URL +'jquery.form.js')
+PENCIL_JS_URL = getattr(settings, 'PENCIL_WYSIWYG_IRL', settings.STATIC_URL + 'pencil/pencil.js')
 
 
 class PencilTextarea(widgets.Textarea):
 
     class Media:
         js = (
-            JQUERY_URL,
-            JQUERY_FORM_URL, 
-            settings.STATIC_URL + 'pencil/pencil.js',
+            PENCIL_JQUERY_URL,
+            PENCIL_JQUERY_FORM_PLUGIN_URL,
+            PENCIL_JS_URL,
         )
         css = {
             'all': (

@@ -2,32 +2,42 @@
 
 Integration Pencil WYSIWYG into Django.
 
+## Requirements
+
+- sorl-thumbnail
 
 ## Installation
 
-### Step 1
-settings.py
+### settings.py
 
     INSTALLED_APPS = (
         ...
+        'sorl.thumbnail',
         'django_pencil',
     )
 
-### Step 2
-urls.py
+### urls.py
 
     urlpatterns = patterns('',
         ...
         url(r'^pencil/', include('django_pencil.urls', namespace='pencil')),
     )
 
-### Step 3
-Also you need to download [Pencil](https://github.com/un1t/pencil) WYSIWYG to your STATIC_ROOT.
+### Download Pencil to your STATIC_DIR
 
-### Step 4
+- https://github.com/un1t/pencil
+
+### Download jQuery and jQuery Form Plugin to your STATIC_DIR
+    
+- https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
+- http://malsup.github.com/jquery.form.js
+
+### Syncdb
+
     manage.py syncdb
 
-### Step 5
+### Use widgets
+
 Add widget to admin.py
 
     from django_pencil.widgets import PencilTextarea
