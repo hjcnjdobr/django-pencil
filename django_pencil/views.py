@@ -16,5 +16,5 @@ def upload_image(request):
     else:
         data = {'error': u'Файл не является изображением.'}
         
-    return HttpResponse(simplejson.dumps(data), content_type='application/json; charset=utf-8')
+    return HttpResponse(simplejson.dumps(data), content_type='text/plain; charset=utf-8')
 

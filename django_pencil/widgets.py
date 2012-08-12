@@ -48,6 +48,7 @@ class PencilTextarea(widgets.Textarea):
             .pencil_modal table td{border: none; vertical-align: middle;}
             .pencil_div p{margin-left: 0 !important; padding: 5px 0 5px 0 !important;}
             .pencil_switch li{list-style-type: none !important;}
+	    .pencil_div p{font-size: 13px !important;}
         </style>
         """ % {
             'id': attrs['id'], 
