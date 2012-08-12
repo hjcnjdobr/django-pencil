@@ -6,9 +6,9 @@ from django.utils import simplejson as json
 from django.conf import settings
 
 
-PENCIL_JQUERY_URL = getattr(settings, 'PENCIL_JQUERY_URL', settings.STATIC_URL + 'jquery.min.js')
-PENCIL_JQUERY_FORM_PLUGIN_URL = getattr(settings, 'PENCIL_JQUERY_FORM_URL',  settings.STATIC_URL +'jquery.form.js')
-PENCIL_JS_URL = getattr(settings, 'PENCIL_WYSIWYG_IRL', settings.STATIC_URL + 'pencil/pencil.js')
+PENCIL_JQUERY_URL = getattr(settings, 'PENCIL_JQUERY_URL', settings.STATIC_URL + 'js/jquery.min.js')
+PENCIL_JQUERY_FORM_PLUGIN_URL = getattr(settings, 'PENCIL_JQUERY_FORM_PLUGIN_URL',  settings.STATIC_URL +'js/jquery.form.js')
+PENCIL_JS_URL = getattr(settings, 'PENCIL_JS_URL', settings.STATIC_URL + 'pencil/pencil.js')
 
 
 class PencilTextarea(widgets.Textarea):
