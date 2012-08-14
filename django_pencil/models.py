@@ -1,7 +1,10 @@
 # coding: utf-8
 from django.db import models
 
-from sorl.thumbnail import ImageField
+try:
+    from django_resized import ResizedImageField as ImageField
+except ImportError:
+    from sorl.thumbnail import ImageField
 
 
 class Picture(models.Model):
