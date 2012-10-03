@@ -27,7 +27,7 @@ Integration Pencil WYSIWYG into Django.
 
 - https://github.com/un1t/pencil
 
-### Download jQuery and jQuery Form Plugin to your STATIC_DIR
+### Download jQuery and jQuery Form Plugin to your STATIC_DIR/js
     
 - https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js
 - http://malsup.github.com/jquery.form.js
