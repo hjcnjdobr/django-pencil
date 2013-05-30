@@ -36,7 +36,7 @@ class PencilTextarea(widgets.Textarea):
         output += """
         <script>
             $(function(){
-                var editor_%(id)s = $('#%(id)s').pencil({
+                var editor_%(jsid)s = $('#%(id)s').pencil({
                     'uploaderUrl': '%(uploader_url)s'
                 });
                 //editor = editor_%(id)s; // DEBUG
@@ -51,7 +51,8 @@ class PencilTextarea(widgets.Textarea):
 	    .pencil_div p{font-size: 13px !important;}
         </style>
         """ % {
-            'id': attrs['id'], 
+            'id': attrs['id'],
+            'jsid': attrs['id'].replace("-", "_"),
             'uploader_url':reverse('pencil:upload')
         }
         return mark_safe(output)
